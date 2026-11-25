@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Propuesta plan mensual Lottus 3D</title><style>
+@font-face{font-family:'Unbounded';font-weight:600;src:url('fonts/unbounded-latin-600-normal.woff2') format('woff2')}
+@font-face{font-family:'Unbounded';font-weight:800;src:url('fonts/unbounded-latin-800-normal.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-weight:400;src:url('fonts/jetbrains-mono-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'JetBrains Mono';font-weight:500;src:url('fonts/jetbrains-mono-latin-500-normal.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:300;src:url('fonts/inter-latin-300-normal.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:400;src:url('fonts/inter-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Inter';font-weight:500;src:url('fonts/inter-latin-500-normal.woff2') format('woff2')}
+@page { size: 1280px 720px; margin: 0 }
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#060706;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.page{width:1280px;height:720px;overflow:hidden;page-break-after:always;break-after:page;background:#060706;color:#F5F6F0;font-family:'Inter',sans-serif;position:relative;padding:56px 80px;display:flex;flex-direction:column;justify-content:space-between}
+.page:last-child{page-break-after:auto;break-after:auto}
+.grid{position:absolute;right:0;top:0;bottom:0;width:520px;background-image:repeating-linear-gradient(90deg,rgba(79,203,62,.10) 0,rgba(79,203,62,.10) 1px,transparent 1px,transparent 16px);-webkit-mask-image:linear-gradient(to left,#000,transparent);mask-image:linear-gradient(to left,#000,transparent)}
+.glow{position:absolute;right:-260px;bottom:-320px;width:760px;height:760px;border-radius:50%;background:radial-gradient(circle,rgba(79,203,62,.18),transparent 65%)}
+.hd{display:flex;justify-content:space-between;align-items:center;position:relative}
+.lab{font-family:'JetBrains Mono',monospace;font-size:13px;letter-spacing:.22em;text-transform:uppercase;color:#4FCB3E}
+.mono{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#9AA39A}
+.h2{margin:0;font-family:'Unbounded',sans-serif;font-weight:800;font-size:40px;line-height:1.1;text-transform:uppercase;letter-spacing:-.01em;position:relative}
+.g{color:#4FCB3E}
+.card{background:#0D110D;border:1px solid #1F2B20;border-radius:28px;padding:26px 28px 30px;display:flex;flex-direction:column;gap:12px}
+.card.hl{border:2px solid #4FCB3E}
+.card h3{margin:0;font-family:'Unbounded',sans-serif;font-weight:800;font-size:22px;text-transform:uppercase}
+.card p{margin:0;font-size:15px;font-weight:300;line-height:1.55;color:#B9C1B8}
+.row{display:grid;gap:20px;position:relative}
+.c3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.c4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.pill{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#B9C1B8;border:1px solid #3B463B;border-radius:999px;padding:12px 24px;position:relative;align-self:center;text-align:center}
+.li{display:flex;gap:12px;font-size:14px;font-weight:300;line-height:1.45;color:#D5DAD3}
+.li i{width:8px;height:8px;border-radius:50%;background:#4FCB3E;margin-top:6px;flex-shrink:0}
+.tag{font-family:'Unbounded',sans-serif;font-weight:600;font-size:11px;letter-spacing:.06em;text-transform:uppercase;background:#4FCB3E;color:#060706;border-radius:999px;padding:8px 14px}
+.price{font-family:'Unbounded',sans-serif;font-weight:800;font-size:34px;line-height:1}
+.sm{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9AA39A;line-height:1.5}
+.ph{border-radius:22px;overflow:hidden;border:1px solid #1F2B20}
+.ph img{display:block;width:100%;height:100%;object-fit:cover}
+
+html,body{background:#060706;margin:0}
+body{padding:12px 0 40px}
+.slot{margin:0 auto 14px;position:relative;overflow:hidden;border-radius:8px;outline:1px solid #1F2B20}
+.slot .page{position:absolute;left:0;top:0;transform-origin:0 0;page-break-after:auto;break-after:auto}
+
+.nav{position:fixed;right:16px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:9;font-family:'JetBrains Mono',monospace;font-size:12px;color:#9aa89a}
+.nav button{width:44px;height:44px;border-radius:50%;border:1px solid #1F2B20;background:#0D110D;color:#4FCB3E;font-size:20px;cursor:pointer;line-height:1}
+.nav button:hover{border-color:#4FCB3E}
+.nav span{min-width:42px;text-align:center}
+html{scroll-behavior:smooth}
+</style></head>
+<body><div class="slot"><section class="page"><div class="grid" style="width:620px"></div><div class="glow" style="right:-220px;bottom:-280px;width:780px;height:780px;background:radial-gradient(circle,rgba(79,203,62,.24),transparent 65%)"></div>
+<div style="position:absolute;right:-70px;top:250px;font-family:'Unbounded',sans-serif;font-weight:800;font-size:250px;line-height:1;letter-spacing:-.02em;color:transparent;-webkit-text-stroke:2px #4FCB3E;opacity:.38;white-space:nowrap">LOTTUS</div>
+<div class="hd"><img src="assets/NOVA_Logo-03.png" style="width:190px;height:auto;display:block"><div class="mono" style="color:#F5F6F0;border:1px solid #3B463B;border-radius:999px;padding:10px 20px">Noviembre 2026</div></div>
+<div style="display:flex;flex-direction:column;gap:26px;position:relative">
+<div class="mono" style="font-size:13px;letter-spacing:.22em">Propuesta · Plan mensual para Lottus 3D</div>
+<h1 style="margin:0;font-family:'Unbounded',sans-serif;font-weight:800;font-size:54px;line-height:1.08;text-transform:uppercase;letter-spacing:-.01em">Cuando piensen en<br><span class="g">impresión 3D,</span><br>piensen en Lottus.</h1>
+<div style="font-size:18px;font-weight:300;color:#B9C1B8">Construimos la marca personal de Lottus y su autoridad en redes · Plan de 3 meses</div>
+</div>
+<div class="hd" style="align-items:center"><div style="display:flex;align-items:center;gap:14px"><span class="mono" style="font-size:11px">Preparado por</span><span style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase">Jordi Arbeláez</span></div><div class="mono" style="font-size:11px">Marca personal · Contenido · Autoridad</div></div>
+</section></div><div class="slot"><section class="page"><div class="grid"></div><div class="glow"></div>
+<div class="hd"><div class="lab">01 · Punto de partida</div><img src="assets/NOVA_Logo-04.png" style="width:40px;height:40px;display:block"></div>
+
+<h2 class="h2" style="font-size:44px">Ya tienen el producto.<br><span class="g">Falta la voz.</span></h2>
+<div class="row c3">
+<div class="card"><div class="mono" style="color:#4FCB3E">01</div><h3>Lo que ya tienen</h3><p>Impresoras Bambu Lab y Snapmaker, filamentos en todos los colores, un curso para dominarlas, tienda y pedidos en línea.</p></div>
+<div class="card"><div class="mono" style="color:#4FCB3E">02</div><h3>Lo que quieren</h3><p>Crear la marca personal de Lottus y aumentar su autoridad en redes sociales.</p></div>
+<div class="card"><div class="mono" style="color:#4FCB3E">03</div><h3>Lo que construimos</h3><p>Un rostro y un flujo constante de contenido que los posicione como la referencia en impresión 3D y convierta esa confianza en ventas.</p></div>
+</div>
+<div class="pill">Objetivo: que más personas los vean, los reconozcan y los elijan</div></section></div><div class="slot"><section class="page"><div class="grid"></div><div class="glow"></div>
+<div class="hd"><div class="lab">02 · Quién soy</div><img src="assets/NOVA_Logo-04.png" style="width:40px;height:40px;display:block"></div>
+
+<h2 class="h2" style="font-size:44px">Quién está<br><span class="g">detrás.</span></h2>
+<div style="display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:stretch;position:relative">
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:baseline;gap:18px"><div style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:84px;line-height:1;color:#4FCB3E">+50</div><div class="mono">Proyectos producidos</div></div>
+<div class="card" style="gap:8px;padding:20px 24px"><div class="mono" style="color:#4FCB3E;font-size:11px">Mi enfoque hoy</div><p style="color:#D5DAD3;font-size:16px">Marketing de marcas personales: convertir a un experto en la marca a la que todos quieren acudir.</p></div>
+<div class="card" style="gap:8px;padding:20px 24px"><div class="mono" style="color:#4FCB3E;font-size:11px">Nivel de producción</div><p style="color:#D5DAD3;font-size:16px">Experiencia con equipo de cine profesional en producciones grandes y miles de dólares invertidos en mi formación.</p></div>
+</div>
+<div style="display:flex;gap:16px">
+<div class="ph" style="width:200px;height:330px"><img src="assets/jordi_cam.jpg"></div>
+<div class="ph" style="flex:1;height:330px"><img src="assets/team.jpg" style="object-position:40% 50%"></div>
+</div>
+</div></section></div><div class="slot"><section class="page"><div class="grid"></div><div class="glow"></div>
+<div class="hd"><div class="lab">03 · Prueba real · Caso Jhat Osorio</div><img src="assets/NOVA_Logo-04.png" style="width:40px;height:40px;display:block"></div>
+
+<div style="display:grid;grid-template-columns:minmax(0,1fr) auto;gap:56px;align-items:center;position:relative">
+<div style="display:flex;flex-direction:column;gap:22px">
+<h2 class="h2" style="font-size:38px">Una marca personal<br><span class="g">que atrae y vende.</span></h2>
+<div><div style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:92px;line-height:1;color:#4FCB3E">$23,8 M</div>
+<div style="font-size:19px;font-weight:400;margin-top:10px">en 16 ventas, entre agosto y septiembre</div>
+<div class="sm" style="margin-top:8px">Ventas de $500.000 a $3.600.000 cada una</div></div>
+<p style="margin:0;font-size:15px;font-weight:300;line-height:1.6;color:#B9C1B8;max-width:520px">Buen servicio + una marca posicionada en redes + un proceso de ventas claro. La audiencia no solo mira: pregunta cuánto cuesta.</p>
+</div>
+<div style="display:flex;gap:20px">
+<div style="display:flex;flex-direction:column;gap:10px;align-items:center"><div class="ph" style="width:178px;height:386px"><img src="assets/jhat1.jpg" style="object-position:top"></div><div class="sm" style="text-align:center;width:178px">Seguidores nuevos<br>minuto a minuto</div></div>
+<div style="display:flex;flex-direction:column;gap:10px;align-items:center"><div class="ph" style="width:178px;height:386px"><img src="assets/jhat2.jpg" style="object-position:top"></div><div class="sm" style="text-align:center;width:178px">“Precio” en los<br>comentarios</div></div>
+</div>
+</div>
+<div class="pill">Estrategia + producción premium + proceso de ventas · Lo mismo que construiremos para Lottus</div></section></div><div class="slot"><section class="page"><div class="grid"></div><div class="glow"></div>
+<div class="hd"><div class="lab">04 · El plan</div><img src="assets/NOVA_Logo-04.png" style="width:40px;height:40px;display:block"></div>
+
+<h2 class="h2" style="font-size:44px">3 meses,<br><span class="g">3 fases.</span></h2>
+<div class="row c3">
+<div class="card" style="gap:14px"><div class="mono" style="color:#4FCB3E">Mes 1</div><h3 style="font-size:26px">Base</h3><div style="height:1px;background:#1F2B20"></div><div style="display:flex;flex-direction:column;gap:10px"><div class="li"><i></i>Diagnóstico del perfil y de la marca</div><div class="li"><i></i>Definir la marca personal de Lottus: voz, identidad y mensajes</div><div class="li"><i></i>Calendario de contenido y perfil renovado</div><div class="li"><i></i>Primeros videos con potencial viral</div></div></div>
+<div class="card" style="gap:14px"><div class="mono" style="color:#4FCB3E">Mes 2</div><h3 style="font-size:26px">Análisis y ajuste</h3><div style="height:1px;background:#1F2B20"></div><div style="display:flex;flex-direction:column;gap:10px"><div class="li"><i></i>Análisis de los resultados del mes 1</div><div class="li"><i></i>Ajuste de temas, ganchos y formatos</div><div class="li"><i></i>Mismo volumen de contenido, con mejor puntería</div><div class="li"><i></i>Sistema claro de atención al cliente</div></div></div>
+<div class="card" style="gap:14px"><div class="mono" style="color:#4FCB3E">Mes 3</div><h3 style="font-size:26px">Escala</h3><div style="height:1px;background:#1F2B20"></div><div style="display:flex;flex-direction:column;gap:10px"><div class="li"><i></i>Potenciar los formatos ganadores</div><div class="li"><i></i>Reseñas y testimonios de clientes</div><div class="li"><i></i>Métricas: medir, analizar y corregir</div><div class="li"><i></i>Metas para los siguientes meses</div></div></div>
+</div>
+<div class="pill">Videos para Instagram, TikTok y Facebook · Informe mensual de resultados</div></section></div><div class="slot"><section class="page"><div class="grid"></div><div class="glow"></div>
+<div class="hd"><div class="lab">05 · Metas y medición</div><img src="assets/NOVA_Logo-04.png" style="width:40px;height:40px;display:block"></div>
+
+<h2 class="h2" style="font-size:44px">Cómo medimos<br><span class="g">que funciona.</span></h2>
+<div class="row c4">
+<div class="card" style="gap:10px;padding:26px 24px 30px"><h3 style="font-size:20px;color:#4FCB3E">Alcance</h3><p style="font-size:14px">Visitas mensuales a sus perfiles, medidas con las estadísticas de Instagram y Metricool.</p></div>
+<div class="card" style="gap:10px;padding:26px 24px 30px"><h3 style="font-size:20px;color:#4FCB3E">Seguidores nuevos</h3><p style="font-size:14px">Crecimiento sumando Instagram, TikTok y Facebook.</p></div>
+<div class="card" style="gap:10px;padding:26px 24px 30px"><h3 style="font-size:20px;color:#4FCB3E">Constancia</h3><p style="font-size:14px">Un ritmo fijo de publicación, según el calendario de contenido.</p></div>
+<div class="card" style="gap:10px;padding:26px 24px 30px"><h3 style="font-size:20px;color:#4FCB3E">Ventas desde redes</h3><p style="font-size:14px">Cuántos clientes llegan por redes, con respuestas claras para que nadie quede sin atender.</p></div>
+</div>
+<div class="pill" style="max-width:980px;line-height:1.7">Cada mes, un informe corto: qué funcionó y qué ajustamos · Las metas numéricas las fijamos juntos tras el diagnóstico del mes 1 · Son metas de trabajo, no una garantía</div></section></div><div class="slot"><section class="page"><div class="grid"></div><div class="glow"></div>
+<div class="hd"><div class="lab">06 · Los planes</div><img src="assets/NOVA_Logo-04.png" style="width:40px;height:40px;display:block"></div>
+
+<h2 class="h2" style="font-size:40px">Elige tu <span class="g">plan.</span></h2>
+<div class="row c3" style="align-items:stretch">
+<div class="card" style="padding:28px 30px 32px;gap:14px"><div style="display:flex;justify-content:space-between;align-items:center;min-height:30px"><div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#B9C1B8">Mentoría</div></div><div class="price" style="">$3.650.000</div><div class="sm">Total · 3 meses</div><div style="height:1px;background:#1F2B20"></div><div style="display:flex;flex-direction:column;gap:10px"><div class="li"><i></i>4 llamadas 1:1 al mes de 60 minutos</div><div class="li"><i></i>Tareas y objetivos cada semana</div><div class="li"><i></i>Estrategia y calendario para ejecutarlo por su cuenta</div><div class="li"><i></i>Informe mensual</div></div></div>
+<div class="card" style="padding:28px 30px 32px;gap:14px"><div style="display:flex;justify-content:space-between;align-items:center;min-height:30px"><div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#B9C1B8">Presencial</div></div><div class="price" style="">$2.450.000</div><div class="sm">Al mes · + % de ventas (a coordinar)</div><div style="height:1px;background:#1F2B20"></div><div style="display:flex;flex-direction:column;gap:10px"><div class="li"><i></i>14 videos al mes, grabados presencialmente</div><div class="li"><i></i>Edición y estrategia de contenido</div><div class="li"><i></i>Calendario de contenido</div><div class="li"><i></i>Perfil y destacadas optimizados</div><div class="li"><i></i>Informe mensual</div></div></div>
+<div class="card hl" style="padding:28px 30px 32px;gap:14px"><div style="display:flex;justify-content:space-between;align-items:center;min-height:30px"><div style="font-family:'Unbounded',sans-serif;font-weight:600;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:#B9C1B8">Escala (combinado)</div><div class="tag">Recomendado</div></div><div class="price" style="color:#4FCB3E">$3.450.000</div><div class="sm">Al mes · 3 meses · + % de ventas (a coordinar)</div><div style="height:1px;background:#1F2B20"></div><div style="display:flex;flex-direction:column;gap:10px"><div class="li"><i></i>16 videos al mes, grabados presencialmente</div><div class="li"><i></i>Mentoría + contenido en un solo plan</div><div class="li"><i></i>Tareas y objetivos cada semana</div><div class="li"><i></i>Informe mensual de resultados</div></div></div>
+</div>
+<div class="sm" style="text-align:center;position:relative">Valores en pesos colombianos</div></section></div><div class="slot"><section class="page"><div class="grid"></div><div class="glow"></div>
+<div class="hd"><div class="lab">07 · Inversión</div><img src="assets/NOVA_Logo-04.png" style="width:40px;height:40px;display:block"></div>
+
+<h2 class="h2" style="font-size:40px">Inversión y <span class="g">condiciones.</span></h2>
+<div style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:40px;position:relative;align-items:start">
+<div>
+<div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:16px;padding-bottom:12px"><div class="mono" style="font-size:11px">Plan</div><div class="mono" style="font-size:11px">Mensual</div><div class="mono" style="font-size:11px">3 meses</div><div class="mono" style="font-size:11px">Forma de pago</div></div>
+<div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:16px;padding:16px 0;border-top:1px solid #1F2B20;align-items:center"><div style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:15px;text-transform:uppercase;">Mentoría</div><div style="font-size:15px;font-weight:500">—</div><div style="font-size:15px;font-weight:500">$3.650.000</div><div style="font-size:14px;font-weight:300;color:#B9C1B8">2 cuotas de $1.825.000</div></div>
+<div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:16px;padding:16px 0;border-top:1px solid #1F2B20;align-items:center"><div style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:15px;text-transform:uppercase;">Presencial</div><div style="font-size:15px;font-weight:500">$2.450.000 + % ventas</div><div style="font-size:15px;font-weight:500">$7.350.000 + % ventas</div><div style="font-size:14px;font-weight:300;color:#B9C1B8">50% al inicio y 50% al cierre de cada mes</div></div>
+<div style="display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:16px;padding:16px 0;border-top:1px solid #1F2B20;align-items:center"><div style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:15px;text-transform:uppercase;color:#4FCB3E;">Escala</div><div style="font-size:15px;font-weight:500">$3.450.000 + % ventas</div><div style="font-size:15px;font-weight:500">$10.350.000 + % ventas</div><div style="font-size:14px;font-weight:300;color:#B9C1B8">50% al inicio y 50% al cierre de cada mes</div></div>
+</div>
+<div class="card" style="gap:12px;padding:24px 26px">
+<div class="mono" style="color:#4FCB3E;font-size:11px">Condiciones</div>
+<div class="li"><i></i>Pago por transferencia bancaria</div>
+<div class="li"><i></i>Compromiso de 3 meses</div>
+<div class="li"><i></i>El porcentaje de ventas se acuerda por escrito antes de empezar</div>
+<div class="li"><i></i>No incluye pauta publicitaria ni desplazamientos fuera de Medellín</div>
+<div class="li"><i></i>Vigencia de la propuesta: 15 días</div>
+</div>
+</div>
+<div class="sm" style="position:relative">Valores en pesos colombianos</div></section></div><div class="slot"><section class="page"><div class="grid"></div><div class="glow"></div>
+<div class="hd"><div class="lab">08 · Siguientes pasos</div><img src="assets/NOVA_Logo-04.png" style="width:40px;height:40px;display:block"></div>
+
+<div style="display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:stretch;position:relative">
+<div style="display:flex;flex-direction:column;gap:16px">
+<h2 class="h2" style="font-size:38px">Empezamos<br><span class="g">esta semana.</span></h2>
+<div style="display:flex;flex-direction:column;gap:10px">
+<div class="card" style="gap:6px;padding:16px 24px 18px"><div class="mono" style="color:#4FCB3E;font-size:11px">01</div><h3 style="font-size:17px">Elegimos el plan</h3><p style="font-size:14px">En una llamada corta resolvemos dudas.</p></div>
+<div class="card" style="gap:6px;padding:16px 24px 18px"><div class="mono" style="color:#4FCB3E;font-size:11px">02</div><h3 style="font-size:17px">Acordamos fechas y pago</h3><p style="font-size:14px">Definimos las cuotas, el porcentaje de ventas y las fechas de grabación.</p></div>
+<div class="card" style="gap:6px;padding:16px 24px 18px"><div class="mono" style="color:#4FCB3E;font-size:11px">03</div><h3 style="font-size:17px">Primera sesión de grabación</h3><p style="font-size:14px">Con el primer pago arrancamos el diagnóstico del mes 1.</p></div>
+</div>
+</div>
+<div style="display:flex;flex-direction:column;justify-content:space-between;background:#4FCB3E;color:#060706;border-radius:36px;padding:40px 40px 44px">
+<div class="mono" style="color:#060706;font-weight:500;font-size:13px">Hablemos</div>
+<div><div style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:34px;line-height:1.05;text-transform:uppercase">Jordi<br>Arbeláez</div><div style="font-size:16px;font-weight:500;margin-top:10px">Nova Productions · @jor_abz</div></div>
+<div><div class="mono" style="color:#060706;font-weight:500">WhatsApp</div><div style="font-family:'Unbounded',sans-serif;font-weight:800;font-size:26px;margin-top:6px">321 796 6286</div></div>
+</div>
+</div>
+<div class="hd"><img src="assets/NOVA_Logo-03.png" style="width:150px;height:auto;display:block"><div class="mono" style="color:#9AA39A;border:1px solid #3B463B;border-radius:999px;padding:10px 18px;font-size:11px">Propuesta válida por 15 días</div></div></section></div>
+<div class="nav"><button id="prev" aria-label="Anterior">&#8592;</button><span id="ctr">1/9</span><button id="next" aria-label="Siguiente">&#8594;</button></div>
+<script>
+function fit(){
+  var w=Math.min(1280,document.documentElement.clientWidth-16),k=w/1280;
+  document.querySelectorAll('.slot').forEach(function(s){
+    s.style.width=w+'px';s.style.height=(720*k)+'px';
+    s.firstElementChild.style.transform='scale('+k+')';
+  });
+}
+fit();window.addEventListener('resize',fit);
+
+var slots=[].slice.call(document.querySelectorAll('.slot')),idx=0,ctr=document.getElementById('ctr');
+function upd(){ctr.textContent=(idx+1)+'/'+slots.length}
+function go(i){idx=Math.max(0,Math.min(slots.length-1,i));upd();slots[idx].scrollIntoView({behavior:'smooth',block:idx==0?'start':'center'})}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){idx=slots.indexOf(e.target);upd()}})},{threshold:0.6});slots.forEach(function(s){io.observe(s)})}
+document.getElementById('prev').onclick=function(){go(idx-1)};
+document.getElementById('next').onclick=function(){go(idx+1)};
+function key(e){
+  var k=e.key;
+  if(k=='ArrowRight'||k=='ArrowDown'||k=='PageDown'||k==' '||k=='Spacebar'){e.preventDefault();go(idx+1)}
+  else if(k=='ArrowLeft'||k=='ArrowUp'||k=='PageUp'){e.preventDefault();go(idx-1)}
+  else if(k=='Home'){e.preventDefault();go(0)}
+  else if(k=='End'){e.preventDefault();go(slots.length-1)}
+}
+document.addEventListener('keydown',key);
+document.body.tabIndex=-1;
+function foc(){try{window.focus();document.body.focus({preventScroll:true})}catch(x){}}
+foc();addEventListener('load',foc);document.addEventListener('pointerdown',foc);document.addEventListener('mouseover',foc,{once:true});
+</script></body></html>
